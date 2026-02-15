@@ -1,157 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aurora Store</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #ffffff;
-    color: #111;
-}
-
-header {
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eee;
-}
-
-.logo {
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #555;
-    margin-left: 20px;
-    font-size: 14px;
-}
-
-.hero {
-    text-align: center;
-    padding: 100px 20px 60px;
-}
-
-.hero h1 {
-    font-size: 40px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    color: #666;
-    font-size: 16px;
-}
-
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 60px 40px;
-}
-
-.card {
-    border: 1px solid #eee;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    transition: 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-}
-
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.card h3 {
-    margin: 15px 0 5px;
-    font-weight: 500;
-}
-
-.price {
-    color: #888;
-    margin-bottom: 15px;
-}
-
-button {
-    padding: 10px 20px;
-    border: 1px solid #111;
-    background: white;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #111;
-    color: white;
-}
-
-footer {
-    text-align: center;
-    padding: 30px;
-    border-top: 1px solid #eee;
-    font-size: 13px;
-    color: #777;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Product Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #111;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .gallery-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .product {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.4s, box-shadow 0.4s;
+            cursor: pointer;
+            position: relative;
+        }
+        .product:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .product img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .product img:hover {
+            transform: scale(1.1);
+        }
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+        .product-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+            color: #333;
+        }
+        .product-info p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        /* Scroll animation */
+        .scroll-section {
+            padding: 60px 20px;
+            background: #f9f9f9;
+        }
+        .scroll-section h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            color: #111;
+        }
+        .scroll-gallery {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding-bottom: 10px;
+        }
+        .scroll-gallery::-webkit-scrollbar {
+            height: 10px;
+        }
+        .scroll-gallery::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+        }
+        .scroll-gallery::-webkit-scrollbar-track {
+            background: #eee;
+        }
+        .scroll-product {
+            min-width: 220px;
+            flex: 0 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .scroll-product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
+        .scroll-product img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+        }
+        .scroll-product .scroll-info {
+            padding: 15px;
+            text-align: center;
+        }
+        .scroll-product .scroll-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        .scroll-product .scroll-info p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+    </style>
 </head>
-
 <body>
+    <header>Premium Daily Essentials</header>
 
-<header>
-    <div class="logo">Aurora</div>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">Contact</a>
-    </nav>
-</header>
-
-<section class="hero">
-    <h1>Minimal. Clean. Modern.</h1>
-    <p>Premium essentials designed for everyday life.</p>
-</section>
-
-<section class="products">
-    <div class="card">
-        <img src="https://picsum.photos/400/300?random=1" alt="Wireless Earbuds">
-        <h3>Wireless Earbuds</h3>
-        <div class="price">₹1,499</div>
-        <button>Add to Cart</button>
+    <div class="gallery-container">
+        <div class="gallery">
+            <div class="product">
+                <img src="ADD YOUR PIC HERE" alt="Wireless Earbuds">
+                <div class="product-info">
+                    <h3>Wireless Earbuds</h3>
+                    <p>High-quality wireless sound for your daily music needs.</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="ADD YOUR PIC HERE" alt="Smart Watch">
+                <div class="product-info">
+                    <h3>Smart Watch</h3>
+                    <p>Keep track of your health and notifications in style.</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="ADD YOUR PIC HERE" alt="Gaming Mouse">
+                <div class="product-info">
+                    <h3>Gaming Mouse</h3>
+                    <p>RGB lighting and precision for hardcore gaming.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="card">
-        <img src="https://picsum.photos/400/300?random=2" alt="Smart Watch">
-        <h3>Smart Watch</h3>
-        <div class="price">₹2,499</div>
-        <button>Add to Cart</button>
+    <div class="scroll-section">
+        <h2>Daily Essentials</h2>
+        <div class="scroll-gallery">
+            <div class="scroll-product">
+                <img src="ADD YOUR PIC HERE" alt="Water Bottle">
+                <div class="scroll-info">
+                    <h4>Water Bottle</h4>
+                    <p>Stay hydrated anytime, anywhere.</p>
+                </div>
+            </div>
+            <div class="scroll-product">
+                <img src="ADD YOUR PIC HERE" alt="Notebook">
+                <div class="scroll-info">
+                    <h4>Notebook</h4>
+                    <p>Perfect for work or school notes.</p>
+                </div>
+            </div>
+            <div class="scroll-product">
+                <img src="ADD YOUR PIC HERE" alt="Backpack">
+                <div class="scroll-info">
+                    <h4>Backpack</h4>
+                    <p>Carry all your essentials in style.</p>
+                </div>
+            </div>
+            <div class="scroll-product">
+                <img src="ADD YOUR PIC HERE" alt="Coffee Mug">
+                <div class="scroll-info">
+                    <h4>Coffee Mug</h4>
+                    <p>Start your day with a warm drink.</p>
+                </div>
+            </div>
+            <div class="scroll-product">
+                <img src="ADD YOUR PIC HERE" alt="Sunglasses">
+                <div class="scroll-info">
+                    <h4>Sunglasses</h4>
+                    <p>Protect your eyes while looking stylish.</p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="card">
-        <img src="https://picsum.photos/400/300?random=3" alt="Gaming Mouse">
-        <h3>Gaming Mouse</h3>
-        <div class="price">₹999</div>
-        <button>Add to Cart</button>
-    </div>
-</section>
-
-<footer>
-    © 2026 Aurora. All rights reserved.
-</footer>
-
 </body>
 </html>
