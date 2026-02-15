@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurora Store</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #ffffff;
+    color: #111;
+}
+
+header {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px 60px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #666;
+    font-size: 16px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 60px 40px;
+}
+
+.card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.price {
+    color: #888;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    border: 1px solid #111;
+    background: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #111;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #eee;
+    font-size: 13px;
+    color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Aurora</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Minimal. Clean. Modern.</h1>
+    <p>Premium essentials designed for everyday life.</p>
+</section>
+
+<section class="products">
+    <div class="card">
+        <h3>Wireless Earbuds</h3>
+        <div class="price">₹1,499</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h3>Smart Watch</h3>
+        <div class="price">₹2,499</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <div class="card">
+        <h3>Gaming Mouse</h3>
+        <div class="price">₹999</div>
+        <button>Add to Cart</button>
+    </div>
+</section>
+
+<footer>
+    © 2026 Aurora. All rights reserved.
+</footer>
+
+</body>
+</html>
