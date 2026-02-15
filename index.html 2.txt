@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            width: 100%;
+        }
+        .product {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 15px;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 10px;
+        }
+        .product h3 {
+            margin: 10px 0 5px 0;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/416+ZILezRL._SY300_SX300_QL70_FMwebp_.jpg"
+            <h3>Wireless Earbuds</h3>
+        </div>
+        <div class="product">
+            <img src="https://m.media-amazon.com/images/I/41WzNRxZCEL._SY300_SX300_QL70_FMwebp_.jpg" alt="Smart Watch">
+            <h3>Smart Watch</h3>
+        </div>
+        <div class="product">
+            <img src="https://zebronics.com/cdn/shop/files/Zeb-Transformer-M-pic-1.jpg?v=1733909879&width=600" alt="Gaming Mouse RGB">
+            <h3>Gaming Mouse RGB</h3>
+        </div>
+    </div>
+</body>
+</html>
