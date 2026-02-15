@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Product Gallery</title>
+    <title>Premium Essentials</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -14,12 +14,12 @@
         }
         header {
             background: #111;
-            color: #fff;
-            padding: 30px 20px;
             text-align: center;
-            font-size: 2rem;
-            letter-spacing: 1px;
+            padding: 20px 0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        header img {
+            height: 80px;
         }
         .gallery-container {
             max-width: 1200px;
@@ -38,7 +38,6 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             transition: transform 0.4s, box-shadow 0.4s;
             cursor: pointer;
-            position: relative;
         }
         .product:hover {
             transform: translateY(-10px) scale(1.05);
@@ -62,12 +61,6 @@
             font-size: 1.3rem;
             color: #333;
         }
-        .product-info p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.4;
-        }
-        /* Scroll animation */
         .scroll-section {
             padding: 60px 20px;
             background: #f9f9f9;
@@ -128,73 +121,21 @@
     </style>
 </head>
 <body>
-    <header>Premium Daily Essentials</header>
+    <header>
+        <img src="A_digital_vector_logo_design_features_the_brand_na.png" alt="Premium Essentials Logo">
+    </header>
 
     <div class="gallery-container">
         <div class="gallery">
             <div class="product">
-                <img src="ADD YOUR PIC HERE" alt="Wireless Earbuds">
+                <img src="combined-products.jpg" alt="All Products Combined">
                 <div class="product-info">
-                    <h3>Wireless Earbuds</h3>
-                    <p>High-quality wireless sound for your daily music needs.</p>
-                </div>
-            </div>
-            <div class="product">
-                <img src="ADD YOUR PIC HERE" alt="Smart Watch">
-                <div class="product-info">
-                    <h3>Smart Watch</h3>
-                    <p>Keep track of your health and notifications in style.</p>
-                </div>
-            </div>
-            <div class="product">
-                <img src="ADD YOUR PIC HERE" alt="Gaming Mouse">
-                <div class="product-info">
-                    <h3>Gaming Mouse</h3>
-                    <p>RGB lighting and precision for hardcore gaming.</p>
+                    <h3>All Essentials</h3>
+                    <p>Notebook, Water Bottle, Backpack, Coffee Mug, Sunglasses, Smart Watch, Gaming Mouse, Wireless Earbuds in one view.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="scroll-section">
-        <h2>Daily Essentials</h2>
-        <div class="scroll-gallery">
-            <div class="scroll-product">
-                <img src="ADD YOUR PIC HERE" alt="Water Bottle">
-                <div class="scroll-info">
-                    <h4>Water Bottle</h4>
-                    <p>Stay hydrated anytime, anywhere.</p>
-                </div>
-            </div>
-            <div class="scroll-product">
-                <img src="ADD YOUR PIC HERE" alt="Notebook">
-                <div class="scroll-info">
-                    <h4>Notebook</h4>
-                    <p>Perfect for work or school notes.</p>
-                </div>
-            </div>
-            <div class="scroll-product">
-                <img src="ADD YOUR PIC HERE" alt="Backpack">
-                <div class="scroll-info">
-                    <h4>Backpack</h4>
-                    <p>Carry all your essentials in style.</p>
-                </div>
-            </div>
-            <div class="scroll-product">
-                <img src="ADD YOUR PIC HERE" alt="Coffee Mug">
-                <div class="scroll-info">
-                    <h4>Coffee Mug</h4>
-                    <p>Start your day with a warm drink.</p>
-                </div>
-            </div>
-            <div class="scroll-product">
-                <img src="ADD YOUR PIC HERE" alt="Sunglasses">
-                <div class="scroll-info">
-                    <h4>Sunglasses</h4>
-                    <p>Protect your eyes while looking stylish.</p>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 </html>
